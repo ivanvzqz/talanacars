@@ -1,0 +1,26 @@
+ {% extends "base.html" %}
+ {% block content %}
+    {% if car.status == 1 %}
+    <div class="car">
+        <h2>{{ car.license_plate }}</h2>
+        <p>{{ car.diesel }}</p>
+        <p>{{ car.doors }}</p>
+        <p>{{ car.size }}</p>
+    </div>
+    {% endif %}
+{% endblock %}
+
+ {% block custom_script %}
+    <script>
+		$.ajax({
+            url: '{% url "GetData" %}',
+            data: {
+
+            },
+            dataType: 'json',
+            success: function (data) {
+
+            }
+        });
+	</script>
+{% endblock %}

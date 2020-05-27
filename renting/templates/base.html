@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE  html>
+<html lang="en">
+    <head>
+        <title>Talana Cars</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/talanacars_home.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'rent_new' %}" class="top-menu"><span class="glyphicon glyphicon-calendar"></span></a>
+            <h1><a href="/">Talana Cars For Rent!</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {% block script %}
+            <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'jquery/dist/jquery-ui.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        {% endblock %}
+
+        {% block custom_script %}
+        {% endblock %}
+    </body>
+</html>
